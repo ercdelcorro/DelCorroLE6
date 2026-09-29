@@ -1,0 +1,106 @@
+/* centers the login box */
+.auth-page {
+  width: 90%;
+  min-height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+}
+
+/* login container */
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+
+  padding: 30px;
+
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.small-title {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.auth-box h1 {
+  margin: 0;
+
+  font-size: 30px;
+  color: #222;
+}
+
+.auth-subtitle {
+  margin: 8px 0 25px;
+
+  color: #777;
+}
+
+/* keeps each input separate */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input {
+  box-sizing: border-box;
+
+  width: 100%;
+  padding: 11px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  font-size: 14px;
+}
+
+/* login button */
+.auth-box button {
+  width: 100%;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: #222;
+  color: white;
+
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background-color: #444;
+}
+
+/* shows when the login details are wrong */
+.login-error {
+  margin-bottom: 18px;
+
+  padding: 10px;
+
+  border: 1px solid #e0b4b4;
+  border-radius: 5px;
+
+  background-color: #fff5f5;
+  color: #b00020;
+
+  font-size: 14px;
+}

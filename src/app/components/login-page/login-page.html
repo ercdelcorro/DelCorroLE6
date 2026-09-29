@@ -1,39 +1,58 @@
-<div>
-  <h1>Welcome Back</h1>
-  <h3>Login Here</h3>
+<div class="auth-page">
 
-  <form
-    name="form"
-    (ngSubmit)="onSubmit()"
-    #ngForm="ngForm"
-    novalidate
-  >
+  <div class="auth-box">
 
-    <div>
+    <p class="small-title">MY BLOG</p>
 
-      <label for="username">Email</label>
+    <h1>Welcome Back</h1>
 
-      <input
-        required
-        type="text"
-        name="username"
-        [(ngModel)]="form.username"
-        #username="ngModel"
-      >
+    <p class="auth-subtitle">
+      Login to your account.
+    </p>
 
-      <label for="password">Password</label>
-
-      <input
-        type="password"
-        name="password"
-        [(ngModel)]="form.password"
-        required
-        #password="ngModel"
-      >
-
+    <div *ngIf="loginError" class="login-error">
+      {{ loginError }}
     </div>
 
-    <button>Submit</button>
+    <form
+      name="form"
+      (ngSubmit)="onSubmit()"
+      #ngForm="ngForm"
+      novalidate
+    >
 
-  </form>
+      <!-- username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+
+        <input
+          required
+          type="text"
+          name="username"
+          [(ngModel)]="form.username"
+          #username="ngModel"
+        >
+      </div>
+
+      <!-- password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          #password="ngModel"
+        >
+      </div>
+
+      <button type="submit">
+        Login
+      </button>
+
+    </form>
+
+  </div>
+
 </div>

@@ -1,14 +1,14 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../models/post.model';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
+  imports: [CommonModule, RouterLink],
   selector: 'app-list-posts',
-  imports: [CommonModule],
-  templateUrl: './list-posts.html',
-  styleUrl: './list-posts.css'
+  styleUrl: 'list-posts.css',
+  templateUrl: 'list-posts.html',
 })
 export class ListPosts implements OnInit {
 

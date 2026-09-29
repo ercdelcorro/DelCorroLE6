@@ -1,13 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../models/post.model';
 
 @Component({
   selector: 'app-post-detail',
-  imports: [],
+  imports: [RouterLink, DatePipe],
   templateUrl: './post-detail.html',
-  styleUrl: './post-detail.css'
+  styleUrl: 'post-detail.css'
 })
 export class PostDetail implements OnInit {
 

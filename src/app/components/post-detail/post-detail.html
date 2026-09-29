@@ -1,14 +1,27 @@
-<h3>
-  <a href="/posts/{{ post?.id }}">
-    {{ post?.title }}
+<!-- post details page -->
+<div class="detail-page">
+
+  <a routerLink="/" class="back-link">
+    ← Back to posts
   </a>
-</h3>
 
-<p>
-  by {{ post?.firstName }} {{ post?.lastName }};
-  on {{ post?.dateCreated }}
-</p>
+  <article class="post-detail">
 
-<p>
-  {{ post?.body }}
-</p>
+    <p class="small-title">BLOG POST</p>
+
+    <h1>{{ post?.title }}</h1>
+
+    <p class="post-info">
+      by {{ post?.firstName }} {{ post?.lastName }}
+      · {{ post?.dateCreated | date:'MMMM d, y · h:mm a' }}
+    </p>
+
+    <div class="post-body">
+      <p>
+        {{ post?.body }}
+      </p>
+    </div>
+
+  </article>
+
+</div>

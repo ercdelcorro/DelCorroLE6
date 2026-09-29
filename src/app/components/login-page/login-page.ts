@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth';
 import { TokenStorageService } from '../../services/token-storage';
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-page',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css'
 })
@@ -17,6 +18,8 @@ export class LoginPage implements OnInit {
     username: null,
     password: null
   };
+
+  loginError: string = '';
 
   constructor(
     private authService: AuthService,
@@ -36,6 +39,8 @@ export class LoginPage implements OnInit {
 
   onSubmit(): void {
 
+    this.loginError = '';
+
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe({
@@ -52,6 +57,9 @@ export class LoginPage implements OnInit {
 
       error: (error) => {
         console.log(error);
+
+        this.loginError = 'Invalid username or password.';
+        this.changeDetectorRef.markForCheck();
       }
     });
   }

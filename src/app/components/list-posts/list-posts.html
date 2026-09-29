@@ -1,14 +1,46 @@
-<div *ngFor="let post of posts">
+<!-- page heading -->
+<div class="posts-page">
 
-  <h3>
-    <a href="/posts/{{ post.id }}">
-      {{ post.title }}
-    </a>
-  </h3>
+  <div class="top-bar">
 
-  <p>
-    by {{ post.firstName }} {{ post.lastName }};
-    on {{ post.dateCreated }}
-  </p>
+    <div>
+      <p class="small-title">MY BLOG</p>
+      <h1>Blog Posts</h1>
+      <p class="subtitle">Simple posts and stories.</p>
+    </div>
+
+    <div class="auth-links">
+      <a routerLink="/login" class="login-button">Login</a>
+      <a routerLink="/register" class="register-button">Register</a>
+    </div>
+
+  </div>
+
+  <!-- shows all the posts from the API -->
+  <div class="posts-list">
+
+    <div class="post-card" *ngFor="let post of posts">
+
+      <h2>
+        <a [routerLink]="['/posts', post.id]">
+          {{ post.title }}
+        </a>
+      </h2>
+
+      <p class="post-info">
+        by {{ post.firstName }} {{ post.lastName }}
+        · {{ post.dateCreated | date:'MMMM d, y · h:mm a' }}
+      </p>
+
+      <a
+        class="read-link"
+        [routerLink]="['/posts', post.id]"
+      >
+        Read post →
+      </a>
+
+    </div>
+
+  </div>
 
 </div>
